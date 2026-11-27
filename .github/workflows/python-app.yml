@@ -1,3 +1,4 @@
+
 name: my-first-workflow
 
 on:
@@ -11,35 +12,44 @@ jobs:
     steps:
       - name: Running single command on line1
         run: echo "Hello world"
+
       - name: Checking os release for github hosted runner
         run: cat /etc/os-release
+
   job2:
     name: JOB2
     runs-on: ubuntu-latest
     steps:
       - name: checking the hostname for Runners
         run: hostname
+
       - name: Running multiple commands
         run: |
           echo "Hi my name is Pappu Yadav"
           echo "Current Time is `date`"
+
   job3:
     name: JOB3
     needs: job1
     runs-on: windows-latest
     steps:
       - name: Job with single Dependencies
-        run: sleep 10
+        shell: pwsh
+        run: Start-Sleep -Seconds 10
+
       - name: check runner info
         shell: pwsh
-        run: get-computerinfo
+        run: Get-ComputerInfo
+
   job4:
     name: JOB4
-    needs: [job1,job2,job3]
+    needs: [job1, job2, job3]
     runs-on: macos-latest
     steps:
-      - name: ubuntu-latest
+      - name: macOS runner
         run: sleep 10
+
       - name: check runner info
         run: sw_vers
+
 
