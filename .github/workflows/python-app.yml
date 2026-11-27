@@ -39,5 +39,5 @@ jobs:
       - name: ubuntu-latest
         run: sleep 10
       - name: check runner info
-        run: sw-vers
+        run: sw_vers
 
