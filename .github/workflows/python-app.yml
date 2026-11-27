@@ -21,4 +21,16 @@ jobs:
         run: |
           echo "Hi my name is Pappu Yadav"
           echo "Current Time is `date`"
+  job3:
+    name: JOB3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Job with single Dependencies
+        run: sleep 10
+  job4:
+    name: JOB4
+    runs-on: ubuntu-latest
+    steps:
+      - name: ubuntu-latest
+        run: sleep 10
 
