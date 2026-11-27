@@ -11,4 +11,14 @@ jobs:
         run: echo "Hello world"
       - name: Checking os release for github hosted runner
         run: cat /etc/os-release
+  job2:
+    name: JOB2
+    runs-on: ububtu-latest
+    steps:
+      - name: checking the hostname for Runners
+        run: hostname
+      - name: Running multiple commands
+        run: |
+          echo "Hi my name is Pappu Yadav"
+          echo "Current Time is `date`"
 
