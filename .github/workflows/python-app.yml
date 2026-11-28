@@ -156,7 +156,10 @@ jobs:
       - name: Checking current directory after downloading file in custom directory
         run: |
           pwd
-          ls -lts
+          echo "checking custom single file"
+          ls -lts custom_single_file
+          echo "checking custom directory details"
+          ls -lts custom_directory
       
       
   
