@@ -44,7 +44,14 @@ jobs:
           path: |
             ./artifact.txt
             pappu/list.txt
-        
+      - name: Upload multiple path with exclusion
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: mutiple path with exclusion
+          path: |
+            pappu/
+            ./artifact.txt
+            !pappu/list.txt
 
        
 
