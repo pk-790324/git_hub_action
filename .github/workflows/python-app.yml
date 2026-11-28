@@ -22,7 +22,7 @@ jobs:
           hostname
       - name: creating file for upload
         run: echo "hello world this is a text for artifact file">>artifact.txt
-      - name: Upload a artifacts in github
+      - name: Upload a single file
         uses: actions/upload-artifact@v7.0.2
         with: 
           name: single_file
