@@ -25,7 +25,7 @@ jobs:
       - name: Upload a artifacts in github
         uses: actions/upload-artifact@v7.0.2
         with: 
-          name: uploading single file as artifacts
+          name: single_file
           path: ./artifact.txt
       - name: creating a directory
         run: |
@@ -40,14 +40,14 @@ jobs:
       - name: Upload a multiple path
         uses: actions/upload-artifact@v7.0.2
         with:
-          name: uploading a multiple path
+          name: multiple_path
           path: |
             ./artifact.txt
             pappu/list.txt
       - name: Upload multiple path with exclusion
         uses: actions/upload-artifact@v7.0.2
         with:
-          name: mutiple path with exclusion
+          name: multiple_path_with_exclusion
           path: |
             pappu/
             ./artifact.txt
@@ -63,7 +63,7 @@ jobs:
       - name: download single file artifacts
         uses: actions/download-artifact@v8.0.2
         with:
-          name: single file
+          name: single_file
       - name: checking download file background
         run: |
           pwd
