@@ -43,7 +43,7 @@ jobs:
           name: uploading a multiple path
           path: |
             ./artifact.txt
-            papp/
+            pappu/
             pappu/list.txt
         
 
