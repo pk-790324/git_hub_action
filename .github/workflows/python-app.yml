@@ -1,55 +1,26 @@
 
 name: my-first-workflow
 
-on:
-  schedule:
-    - cron: "6 * * * *"
+on: push
 
 jobs:
   job1:
     name: JOB1
     runs-on: ubuntu-latest
     steps:
-      - name: Running single command on line1
-        run: echo "Hello world"
-
-      - name: Checking os release for github hosted runner
-        run: cat /etc/os-release
-
-  job2:
-    name: JOB2
-    runs-on: ubuntu-latest
-    steps:
-      - name: checking the hostname for Runners
-        run: hostname
-
-      - name: Running multiple commands
+      - name: step-1
         run: |
-          echo "Hi my name is Pappu Yadav"
-          echo "Current Time is `date`"
+          pwd
+          ls -ltr
+          hostname
+      - name: step2-checkout
+        uses: actions/checkout@v2.8.0
+      - name: step3
+        run: |
+          pwd
+          ls -ltr
+          hostname
 
-  job3:
-    name: JOB3
-    needs: job1
-    runs-on: windows-latest
-    steps:
-      - name: Job with single Dependencies
-        shell: pwsh
-        run: Start-Sleep -Seconds 10
-
-      - name: check runner info
-        shell: pwsh
-        run: Get-ComputerInfo
-
-  job4:
-    name: JOB4
-    needs: [job1, job2, job3]
-    runs-on: macos-latest
-    steps:
-      - name: macOS runner
-        run: sleep 10
-
-      - name: check runner info
-        run: sw_vers
+       
 
 
